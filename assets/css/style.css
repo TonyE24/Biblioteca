@@ -1,0 +1,223 @@
+/* Estilos modernos para la biblioteca */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+
+:root {
+  --bg: #0f1724; /* fondo oscuro */
+  --card: #0b1220; /* tarjetas */
+  --muted: #94a3b8;
+  --accent: #7c3aed; /* morado */
+  --accent-2: #06b6d4; /* cian */
+  --surface: #0b1220;
+  --glass: rgba(255, 255, 255, 0.03);
+  --success: #16a34a;
+  --danger: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #071021 0%, #081228 60%);
+  color: #e6eef8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 32px;
+}
+
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+header.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.brand .logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+  font-size: 20px;
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.18);
+}
+.brand h1 {
+  font-size: 20px;
+  margin: 0;
+}
+.brand p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* dos columnas iguales */
+  gap: 20px; /* margen de 20px entre columnas */
+}
+
+form.search {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+form.search input[type="text"] {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent;
+  color: inherit;
+}
+form.search select,
+form.search button {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent;
+  color: inherit;
+}
+form.search button {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+h3 {
+  margin: 6px 0 12px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.form-row label {
+  font-size: 13px;
+  color: var(--muted);
+}
+.form-row input[type="text"] {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+  color: inherit;
+}
+.form-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.btn.primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+}
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+thead th {
+  text-align: left;
+  padding: 12px 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+tbody td {
+  padding: 12px 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+}
+tbody tr:nth-child(even) {
+  background: transparent;
+}
+.tag {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+.tag.available {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--success);
+  border: 1px solid rgba(16, 185, 129, 0.08);
+}
+.tag.unavailable {
+  background: rgba(239, 68, 68, 0.08);
+  color: var(--danger);
+  border: 1px solid rgba(239, 68, 68, 0.06);
+}
+
+.inline {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+.inline input[type="text"] {
+  margin-top: 20px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+  color: inherit;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .brand h1 {
+    font-size: 18px;
+  }
+}
